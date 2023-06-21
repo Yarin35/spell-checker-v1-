@@ -1,0 +1,12 @@
+{
+  "name": "spell-checker",
+  "version": "1.0.0",
+  "description": "Spell Checker Backend",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "spellchecker": "^3.7.0"
+  }
+}

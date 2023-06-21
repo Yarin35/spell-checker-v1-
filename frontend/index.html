@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spell Checker</title>
+</head>
+<body>
+  <h1>Spell Checker</h1>
+  <textarea id="text" rows="10" cols="50"></textarea>
+  <button id="checkButton">Check Spelling</button>
+  <div id="result"></div>
+
+  <script>
+    const checkButton = document.getElementById('checkButton');
+    const textArea = document.getElementById('text');
+    const resultDiv = document.getElementById('result');
+
+    checkButton.addEventListener('click', async () => {
+      const text = textArea.value;
+
+      const response = await fetch('/spellcheck', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text })
+      });
+
+      const { misspelled } = await response.json();
+
+      resultDiv.innerText = `Misspelled words: ${misspelled.join(', ')}`;
+    });
+  </script>
+</body>
+</html>
