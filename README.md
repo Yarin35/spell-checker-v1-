@@ -1,5 +1,5 @@
 # spell-checker-v1-
-a simple spell-checker that will ensure eery words send are well written
+a simple spell-checker that will ensure every words send are well written
 
 made with docker so in order to run you have to make sure you have docker and docker-compose
 
